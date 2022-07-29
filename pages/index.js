@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Feed from '../components/Feed';
 import Header from '../components/Header';
 
 export default function Home() {
@@ -11,7 +12,8 @@ export default function Home() {
 
       {/* Header */}
       <Header />
-      {/* Feed */}
+      {/* Feed contains the posts and right sidebar with suggestions */}
+      <Feed />
       {/* Modal */}
     </div>
   );
