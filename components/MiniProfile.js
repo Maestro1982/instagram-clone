@@ -2,7 +2,7 @@ import React from 'react';
 
 function MiniProfile() {
   return (
-    <div className='flex items-center justify-between mt-14 ml-10'>
+    <div className='flex items-center justify-between mt-8 ml-10'>
       <img
         className='rounded-full w-14 h-14'
         src='https://media-exp1.licdn.com/dms/image/C4E03AQHiLIb4_u15vw/profile-displayphoto-shrink_800_800/0/1655199584360?e=1664409600&v=beta&t=adUAjW1_UHu0z_EUlZ96SFhGrzQT1phFfSadokpbx8Y'
