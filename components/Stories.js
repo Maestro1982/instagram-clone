@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { faker } from '@faker-js/faker';
 import Story from './Story';
+import { useSession } from 'next-auth/react';
 
 function Stories() {
   const [suggestions, setSuggestions] = useState([]);
+  const { data: session } = useSession();
 
   /* This will run when the component mounts to generate fake data */
   useEffect(() => {
@@ -24,6 +26,9 @@ function Stories() {
 
   return (
     <div className='flex space-x-2 p-6 bg-white mt-8 border-gray-200 border rounded-xl overflow-x-scroll scrollbar-thin scrollbar-thumb-gray-100'>
+      {session && (
+        <Story img={session.user.image} username={session.user.username} />
+      )}
       {suggestions.map((profile) => (
         <Story
           key={profile.id}
