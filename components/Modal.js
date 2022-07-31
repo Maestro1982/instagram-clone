@@ -6,7 +6,7 @@ import { Dialog, Transition } from '@headlessui/react';
 function Modal() {
   const [isOpen, setIsOpen] = useRecoilState(modalState);
   return (
-    <Transition.Root show={true} as={Fragment}>
+    <Transition.Root show={isOpen} as={Fragment}>
       <Dialog
         as='div'
         className='fixed z-10 inset-0 overflow-y-auto'
