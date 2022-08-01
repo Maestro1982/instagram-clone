@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp, getApps, getApp } from 'firebase/app';
-import { getFirestore } from 'firebase/firestore';
+import { initializeApp, getApps, getApp, g } from 'firebase/app';
+import { getFirestore, initializeFirestore } from 'firebase/firestore';
 import { getStorage } from 'firebase/storage';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -19,7 +19,7 @@ const firebaseConfig = {
 /* Because of SSR (Server Side Rendering) you need to check if the app is already loaded
    otherwise you have 2 instances of firebase you DON'T want that => singleton pattern */
 const app = !getApps().length ? initializeApp(firebaseConfig) : getApp;
-const db = getFirestore();
+const db = initializeFirestore(app, { experimentalForceLongPolling: true });
 const storage = getStorage();
 
 export { app, db, storage };
