@@ -20,4 +20,5 @@ function Suggestion({ avatar, username, company }) {
     </div>
   );
 }
+
 export default Suggestion;
