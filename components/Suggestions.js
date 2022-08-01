@@ -38,6 +38,7 @@ function Suggestions() {
           company={profile.company}
         />
       ))}
+      <footer className='text-[#cdcdcd]'>&#169; 2022 Maestro1982</footer>
     </div>
   );
 }
