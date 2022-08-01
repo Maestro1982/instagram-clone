@@ -18,12 +18,7 @@ const firebaseConfig = {
 // Initialize Firebase
 /* Because of SSR (Server Side Rendering) you need to check if the app is already loaded
    otherwise you have 2 instances of firebase you DON'T want that => singleton pattern */
-const app = !getApps().length
-  ? initializeApp(firebaseConfig, {
-      experimentalForceLongPolling: true, // this line
-      useFetchStreams: false,
-    })
-  : getApp;
+const app = !getApps().length ? initializeApp(firebaseConfig) : getApp;
 const db = getFirestore();
 const storage = getStorage();
 
