@@ -95,8 +95,10 @@ function Post({ id, username, userImg, img, caption }) {
         <p className='flex-1 font-medium'>{username}</p>
         <DotsHorizontalIcon className='h-5' />
       </div>
+
       {/* Img */}
       <img className='object-cover w-full' src={img} alt='' />
+
       {/* Buttons */}
       {session && (
         <div className='flex justify-between px-4 pt-4'>
@@ -115,6 +117,7 @@ function Post({ id, username, userImg, img, caption }) {
           <BookmarkIcon className='btn' />
         </div>
       )}
+
       {/* Caption */}
       <p className='p-5 truncate'>
         {likes.length > 0 && (
@@ -124,6 +127,7 @@ function Post({ id, username, userImg, img, caption }) {
         )}
         <span className='font-medium mr-1'>{username}</span> {caption}
       </p>
+
       {/* Comments */}
       {comments.length > 0 && (
         <div className='ml-10 h-10 overflow-y-scroll scrollbar-thin scrollbar-thumb-gray-100'>
@@ -145,6 +149,7 @@ function Post({ id, username, userImg, img, caption }) {
           ))}
         </div>
       )}
+
       {/* Input Box */}
       {session && (
         <form className='flex items-center p-4'>
